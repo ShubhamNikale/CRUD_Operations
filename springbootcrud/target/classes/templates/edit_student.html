@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Edit student</title>
+	</head>
+	<body>
+		<h2>Update student</h2>
+		<form th:action="@{/student/update}" method="post" th:object="${student}">
+		    Id  <input type="text" th:field="*{sId}" readonly="readonly"/><br/>
+			Name : <input type="text" th:field="*{sName}" /><br />
+			Department : <select th:field="*{sDept}">
+				<option value="">Select</option>
+				<option value="DEV">DEV</option>
+				<option value="QA">QA</option>
+			</select> 
+			<br /> 
+			Salary : <input type="text" th:field="*{sSalary}" /><br />
+			<input type="submit" value="Update student"/>
+		</form>
+		<br/>
+		<label th:text="${message}"></label>
+	</body>
+</html>
